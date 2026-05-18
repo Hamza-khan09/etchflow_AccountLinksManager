@@ -31,7 +31,7 @@ Replicates the behaviour of MagePal's "Customer Dashboard Links Manager", with t
 ### Option A — Composer
 
 ```bash
-composer require lockstation/module-account-links-manager:^1.0
+composer require etchflow/module-account-links-manager:^1.0
 bin/magento module:enable Lockstation_AccountLinksManager
 bin/magento setup:upgrade
 bin/magento setup:di:compile      # production mode only
@@ -97,7 +97,7 @@ To remove completely:
 
 ```bash
 # If Composer-installed
-composer remove lockstation/module-account-links-manager
+composer remove etchflow/module-account-links-manager
 
 # If manual drop-in
 rm -rf app/code/Lockstation/AccountLinksManager
