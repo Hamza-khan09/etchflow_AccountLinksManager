@@ -1,11 +1,11 @@
 {
-    "name": "etchflow/module-account-links-manager",
+    "name": "etechflow/module-account-links-manager",
     "description": "Admin-configurable hide/show for customer 'My Account' sidebar links. Hyva / Magento Open Source / Adobe Commerce compatible.",
     "type": "magento2-module",
     "version": "1.0.0",
     "license": "MIT",
     "authors": [
-        { "name": "Lockstation", "homepage": "https://lockstation.uk" }
+        { "name": "Etechflow", "homepage": "https://etechflow.com" }
     ],
     "require": {
         "php": "~8.1.0||~8.2.0||~8.3.0||~8.4.0",
@@ -16,6 +16,6 @@
     },
     "autoload": {
         "files": ["registration.php"],
-        "psr-4": { "Lockstation\\AccountLinksManager\\": "" }
+        "psr-4": { "Etechflow\\AccountLinksManager\\": "" }
     }
 }

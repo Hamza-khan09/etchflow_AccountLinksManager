@@ -1,4 +1,4 @@
-# Lockstation_AccountLinksManager
+# Etechflow_AccountLinksManager
 
 Admin-configurable module that lets you hide unwanted links from the customer **My Account** sidebar without editing any templates or layout XML.
 
@@ -31,8 +31,8 @@ Replicates the behaviour of MagePal's "Customer Dashboard Links Manager", with t
 ### Option A — Composer
 
 ```bash
-composer require etchflow/module-account-links-manager:^1.0
-bin/magento module:enable Lockstation_AccountLinksManager
+composer require etechflow/module-account-links-manager:^1.0
+bin/magento module:enable Etechflow_AccountLinksManager
 bin/magento setup:upgrade
 bin/magento setup:di:compile      # production mode only
 bin/magento cache:flush
@@ -40,10 +40,10 @@ bin/magento cache:flush
 
 ### Option B — Manual drop-in
 
-Copy the `Lockstation_AccountLinksManager` folder into `app/code/Lockstation/AccountLinksManager/`, then:
+Copy the `Etechflow_AccountLinksManager` folder into `app/code/Etechflow/AccountLinksManager/`, then:
 
 ```bash
-bin/magento module:enable Lockstation_AccountLinksManager
+bin/magento module:enable Etechflow_AccountLinksManager
 bin/magento setup:upgrade
 bin/magento setup:di:compile      # production mode only
 bin/magento cache:flush
@@ -53,7 +53,7 @@ No database tables are created — settings live in `core_config_data`.
 
 ## Configuration
 
-**Admin → Stores → Configuration → Lockstation → Customer Dashboard Links Manager**
+**Admin → Stores → Configuration → Etechflow → Customer Dashboard Links Manager**
 
 | Field | Description |
 |---|---|
@@ -66,7 +66,7 @@ Per-store-view configuration is supported — the same Hide/Show config can diff
 
 ## How it works
 
-1. The module registers an admin config section under **Lockstation → Customer Dashboard Links Manager**.
+1. The module registers an admin config section under **Etechflow → Customer Dashboard Links Manager**.
 2. When a customer-facing page renders the navigation block, our plugin (`Plugin/NavigationPlugin.php`) intercepts the block right before it outputs HTML.
 3. The plugin iterates the navigation's child link blocks. For each one, it asks: *"Should this link be removed?"* — based on the admin's selected mode and link list.
 4. Hidden links are removed via `Layout::unsetChild($parent, $childName)` — the same mechanism Magento itself uses for `<referenceBlock remove="true"/>` in layout XML.
@@ -89,7 +89,7 @@ The module ships zero frontend assets (no `view/frontend/web/css`, no `js`, no `
 ## Uninstall
 
 ```bash
-bin/magento module:disable Lockstation_AccountLinksManager
+bin/magento module:disable Etechflow_AccountLinksManager
 bin/magento cache:flush
 ```
 
@@ -97,10 +97,10 @@ To remove completely:
 
 ```bash
 # If Composer-installed
-composer remove etchflow/module-account-links-manager
+composer remove etechflow/module-account-links-manager
 
 # If manual drop-in
-rm -rf app/code/Lockstation/AccountLinksManager
+rm -rf app/code/Etechflow/AccountLinksManager
 bin/magento setup:upgrade
 bin/magento cache:flush
 ```
@@ -108,13 +108,13 @@ bin/magento cache:flush
 Config entries in `core_config_data` are left behind but harmless — they're just unread XML paths after the module is gone. To purge them:
 
 ```sql
-DELETE FROM core_config_data WHERE path LIKE 'lockstation_account_links/%';
+DELETE FROM core_config_data WHERE path LIKE 'etechflow_account_links/%';
 ```
 
 ## File layout
 
 ```
-Lockstation_AccountLinksManager/
+Etechflow_AccountLinksManager/
 ├── registration.php
 ├── composer.json
 ├── LICENSE

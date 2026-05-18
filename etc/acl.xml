@@ -7,7 +7,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Lockstation_AccountLinksManager::config"
+                            <resource id="Etechflow_AccountLinksManager::config"
                                       title="Customer Dashboard Links Manager"
                                       sortOrder="100"/>
                         </resource>

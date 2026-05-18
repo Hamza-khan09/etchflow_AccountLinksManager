@@ -2,13 +2,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <lockstation_account_links>
+        <etechflow_account_links>
             <general>
                 <enabled>0</enabled>
                 <mode>hide_selected</mode>
                 <hidden_links></hidden_links>
                 <extra_block_names></extra_block_names>
             </general>
-        </lockstation_account_links>
+        </etechflow_account_links>
     </default>
 </config>

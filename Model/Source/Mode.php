@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lockstation\AccountLinksManager\Model\Source;
+namespace Etechflow\AccountLinksManager\Model\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 

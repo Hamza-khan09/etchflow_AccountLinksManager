@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lockstation\AccountLinksManager\Plugin;
+namespace Etechflow\AccountLinksManager\Plugin;
 
-use Lockstation\AccountLinksManager\Model\Config;
-use Lockstation\AccountLinksManager\Model\Source\Mode;
+use Etechflow\AccountLinksManager\Model\Config;
+use Etechflow\AccountLinksManager\Model\Source\Mode;
 use Magento\Framework\View\Element\Html\Links;
 
 /**

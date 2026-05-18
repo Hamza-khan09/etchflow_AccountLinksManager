@@ -2,16 +2,16 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="lockstation" translate="label" sortOrder="500">
-            <label>Lockstation</label>
+        <tab id="etechflow" translate="label" sortOrder="500">
+            <label>Etechflow</label>
         </tab>
 
-        <section id="lockstation_account_links" translate="label"
+        <section id="etechflow_account_links" translate="label"
                  type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Customer Dashboard Links Manager</label>
-            <tab>lockstation</tab>
-            <resource>Lockstation_AccountLinksManager::config</resource>
+            <tab>etechflow</tab>
+            <resource>Etechflow_AccountLinksManager::config</resource>
 
             <group id="general" translate="label" type="text"
                    sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -27,7 +27,7 @@
                 <field id="mode" translate="label comment" type="select"
                        sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Action</label>
-                    <source_model>Lockstation\AccountLinksManager\Model\Source\Mode</source_model>
+                    <source_model>Etechflow\AccountLinksManager\Model\Source\Mode</source_model>
                     <comment><![CDATA[
                         <strong>Hide selected links</strong>: every link in the list below is hidden from the customer dashboard sidebar.<br/>
                         <strong>Show only selected links</strong>: only the links you pick remain visible; everything else is hidden.
@@ -40,7 +40,7 @@
                 <field id="hidden_links" translate="label comment" type="multiselect"
                        sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Links</label>
-                    <source_model>Lockstation\AccountLinksManager\Model\Source\AvailableLinks</source_model>
+                    <source_model>Etechflow\AccountLinksManager\Model\Source\AvailableLinks</source_model>
                     <comment><![CDATA[Pick which customer "My Account" sidebar links to manage. The list shows the standard Magento + Adobe Commerce link names; if your store has custom links from extensions, list their block names in the field below.]]></comment>
                     <depends>
                         <field id="enabled">1</field>

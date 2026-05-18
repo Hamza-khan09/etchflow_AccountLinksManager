@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace Lockstation\AccountLinksManager\Model;
+namespace Etechflow\AccountLinksManager\Model;
 
-use Lockstation\AccountLinksManager\Model\Source\Mode;
+use Etechflow\AccountLinksManager\Model\Source\Mode;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
 class Config
 {
-    public const XML_ENABLED          = 'lockstation_account_links/general/enabled';
-    public const XML_MODE             = 'lockstation_account_links/general/mode';
-    public const XML_HIDDEN_LINKS     = 'lockstation_account_links/general/hidden_links';
-    public const XML_EXTRA_BLOCKS     = 'lockstation_account_links/general/extra_block_names';
+    public const XML_ENABLED          = 'etechflow_account_links/general/enabled';
+    public const XML_MODE             = 'etechflow_account_links/general/mode';
+    public const XML_HIDDEN_LINKS     = 'etechflow_account_links/general/hidden_links';
+    public const XML_EXTRA_BLOCKS     = 'etechflow_account_links/general/extra_block_names';
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig

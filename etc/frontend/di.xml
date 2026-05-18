@@ -10,8 +10,8 @@
         the block's name-in-layout so it doesn't touch unrelated lists.
     -->
     <type name="Magento\Framework\View\Element\Html\Links">
-        <plugin name="lockstation_account_links_manager_filter"
-                type="Lockstation\AccountLinksManager\Plugin\NavigationPlugin"
+        <plugin name="etechflow_account_links_manager_filter"
+                type="Etechflow\AccountLinksManager\Plugin\NavigationPlugin"
                 sortOrder="100"/>
     </type>
 </config>
