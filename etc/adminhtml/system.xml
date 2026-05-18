@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="lockstation" translate="label" sortOrder="500">
+            <label>Lockstation</label>
+        </tab>
+
+        <section id="lockstation_account_links" translate="label"
+                 type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Dashboard Links Manager</label>
+            <tab>lockstation</tab>
+            <resource>Lockstation_AccountLinksManager::config</resource>
+
+            <group id="general" translate="label" type="text"
+                   sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+
+                <field id="enabled" translate="label comment" type="select"
+                       sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Turn the module on or off without uninstalling it.</comment>
+                </field>
+
+                <field id="mode" translate="label comment" type="select"
+                       sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Action</label>
+                    <source_model>Lockstation\AccountLinksManager\Model\Source\Mode</source_model>
+                    <comment><![CDATA[
+                        <strong>Hide selected links</strong>: every link in the list below is hidden from the customer dashboard sidebar.<br/>
+                        <strong>Show only selected links</strong>: only the links you pick remain visible; everything else is hidden.
+                    ]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="hidden_links" translate="label comment" type="multiselect"
+                       sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Links</label>
+                    <source_model>Lockstation\AccountLinksManager\Model\Source\AvailableLinks</source_model>
+                    <comment><![CDATA[Pick which customer "My Account" sidebar links to manage. The list shows the standard Magento + Adobe Commerce link names; if your store has custom links from extensions, list their block names in the field below.]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="extra_block_names" translate="label comment" type="textarea"
+                       sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Extra block names (one per line)</label>
+                    <comment><![CDATA[
+                        Add layout block names not in the Links list above (one per line). Example:<br/>
+                        <code>customer-account-navigation-magefan-blog-comments-link</code><br/>
+                        <code>my-custom-extension-link</code>
+                    ]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
